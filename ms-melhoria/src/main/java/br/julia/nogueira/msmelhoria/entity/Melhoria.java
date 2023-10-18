@@ -21,8 +21,10 @@ public class Melhoria {
     private Long id;
     @Column(name = "proposta_melhoria")
     private String tipoMelhoria;
-    @Enumerated(EnumType.STRING)
-    private Voto Voto;
+
+//    @Enumerated(EnumType.STRING)
+//    private Voto Voto;
+
     @Column(name = "qt_votos")
     private Integer qtdVoto = 0;
 
