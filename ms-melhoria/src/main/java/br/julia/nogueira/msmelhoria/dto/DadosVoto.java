@@ -5,7 +5,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class VotoTeste {
+public class DadosVoto {
 
 
     private Integer qtdVoto = 0;
