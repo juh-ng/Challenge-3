@@ -41,7 +41,6 @@ public class Melhoria {
         if(dadosVoto.getVoto().equals(Voto.APROVAR)){
            qtdVoto ++;
         }
-
     }
 
 }
