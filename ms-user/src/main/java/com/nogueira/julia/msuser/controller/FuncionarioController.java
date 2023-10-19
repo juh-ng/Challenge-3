@@ -36,7 +36,7 @@ public class FuncionarioController {
            return ResponseEntity.ok().body(new DadosFuncionario(funcionario));
      }
 
-    @PutMapping("/votar")
+    @PutMapping("/votos")
     public void cadastrarVoto(@RequestBody DadosVotos votos){
         service.cadastrarVoto(votos);
     }
