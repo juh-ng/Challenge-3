@@ -36,7 +36,7 @@ public class MelhoriaController {
 
     }
 
-    @PutMapping("/votacao")
+    @PutMapping("votacao")
     @Transactional
     public ResponseEntity abrirVotacao(@RequestBody DadosVoto voto) {
         var dados = repository.getReferenceById(voto.getIdMelhoria());
