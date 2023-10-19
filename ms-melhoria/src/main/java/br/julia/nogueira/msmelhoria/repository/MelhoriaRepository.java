@@ -11,9 +11,5 @@ import java.util.Optional;
 public interface MelhoriaRepository extends JpaRepository <Melhoria, Long>{
 
 
-
-
-
-
      Page<Melhoria> findAllByAtivoTrue(Pageable paginacao);
 }
