@@ -31,6 +31,8 @@ public class MelhoriaController {
 
 
 
+
+
     @PostMapping
     @Transactional
     public ResponseEntity guardarMelhorias(@RequestBody @Valid DadosMelhoria dados, UriComponentsBuilder buider) {
@@ -63,7 +65,7 @@ public class MelhoriaController {
         service.evitaVotosRepetidos(voto);
         service.atualizaVotos(voto);
 
-    return ResponseEntity.ok().build();
+        return ResponseEntity.ok().build();
 
     }
 
@@ -72,6 +74,12 @@ public class MelhoriaController {
         var page = repository.findAll(paginacao).map(DadosMelhoria::new);
         return ResponseEntity.ok(page);
 
+    }
+
+    @DeleteMapping("/deleta/{id}")
+    @Transactional
+    public void apagarDadosNulos(@PathVariable Long id){
+        repository.deleteById(id);
     }
 
 

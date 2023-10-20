@@ -43,10 +43,18 @@ public class Melhoria {
     }
 
 
+//    public void atualizaVoto(DadosVoto voto){
+//        if(voto.getVoto().equals(Voto.APROVAR)){
+//             qtdVoto ++;
+//        }
+//        if(voto.getVoto().equals(Voto.REJEITAR)){
+//            throw new RuntimeException("melhoria rejeitada");
+//        }
+//    }
 
-
-
-
+    public void setContagemVotos(DadosVoto voto) {
+        qtdVoto ++;
+    }
 }
 
 
