@@ -3,6 +3,7 @@ package com.nogueira.julia.msuser.domain.entity;
 import com.nogueira.julia.msuser.domain.dto.DadosFuncionario;
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.validator.constraints.UniqueElements;
 
 @Entity
 @Table(name="funcionarios")
@@ -14,6 +15,7 @@ public class Funcionario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String cpf;
     @Column(name="esta_ativo")
     private Boolean ativo;

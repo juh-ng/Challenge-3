@@ -2,6 +2,7 @@ package com.nogueira.julia.msuser.domain.dto;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.validator.constraints.br.CPF;
 import org.springframework.stereotype.Component;
 
 @Getter
@@ -13,6 +14,13 @@ public class DadosVotos {
     private Long idMelhoria;
 
     private Voto voto;
+
+    private Integer min;
+
+    @CPF
+    private String cpf;
+
+
 
 
 }

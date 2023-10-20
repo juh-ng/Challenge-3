@@ -12,5 +12,22 @@ public class DadosVoto {
 
     private Long idMelhoria;
 
+    private String cpf;
+
+    private Long idFuncionario;
+
     private Voto voto;
+
+    private Integer min;
+
+
+
+
+
+
+
+
+
+
+
 }
