@@ -10,6 +10,8 @@ import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class FuncionarioService {
 
@@ -22,13 +24,17 @@ public class FuncionarioService {
     @Autowired
     private VotoClient client;
 
-    public Funcionario cadastrarFuncionario(DadosFuncionario dados){
+    public Funcionario cadastrarFuncionario(DadosFuncionario dados) throws IllegalAccessException {
+        Optional<Funcionario> existingFuncionario = repository.findByCpf(dados.cpf());
+        if(existingFuncionario.isPresent()){
+            throw new IllegalAccessException("cpf já cadastrado: nao_pode_votar");
+        }
         var user = new Funcionario(dados);
         return repository.save(user);
     }
 
     public void cadastrarVoto(DadosVotos dados){
-        client.abreVotacao(dados);
+        client.registraVotacao(dados);
            if(dados.getVoto() == Voto.APROVAR){
                  int votoCont = dados.getQtdVoto();
                  votoCont++;

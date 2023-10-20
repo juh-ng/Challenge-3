@@ -23,7 +23,7 @@ public class FuncionarioController {
 
     @PostMapping
     @Transactional
-    public ResponseEntity inserirFuncionario(@RequestBody @Valid DadosFuncionario dados, UriComponentsBuilder uriBuilder){
+    public ResponseEntity inserirFuncionario(@RequestBody @Valid DadosFuncionario dados, UriComponentsBuilder uriBuilder) throws IllegalAccessException {
         var funcionarioCadastrado = service.cadastrarFuncionario(dados);
         var uri = uriBuilder.path("/employees/{id}").buildAndExpand(dados.id()).toUri();
 
