@@ -1,5 +1,6 @@
 package br.julia.nogueira.msmelhoria.entity;
 
+import br.julia.nogueira.msmelhoria.dto.DadosMelhoria;
 import br.julia.nogueira.msmelhoria.dto.Voto;
 import br.julia.nogueira.msmelhoria.dto.DadosVoto;
 import jakarta.persistence.*;
@@ -39,15 +40,9 @@ public class Melhoria {
         this.ativo = true;
     }
 
-//    public void atualizarVotos(DadosVoto dadosVoto) {
-//        if(dadosVoto.getVoto().equals(Voto.APROVAR)){
-//           qtdVoto ++;
-//        }
-//
-//        if(dadosVoto.getVoto().equals(Voto.REJEITAR)){
-//            throw new RuntimeException("proposta rejeitada");
-//        }
-//    }
+    public Melhoria(DadosMelhoria dadosCadastro) {
+    }
+
 
 
 

@@ -17,7 +17,7 @@ public class DadosVotos {
 
     private Integer min;
 
-    @CPF
+    @CPF(message = "nao_pode_votar")
     private String cpf;
 
 
