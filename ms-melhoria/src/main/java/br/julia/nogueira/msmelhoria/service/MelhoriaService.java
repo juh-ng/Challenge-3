@@ -22,6 +22,7 @@ public class MelhoriaService {
 
 
 
+
     public MelhoriaService(MelhoriaRepository repository, VotoFuncionarioRepository votoFuncionarioRepository) {
         this.repository = repository;
         this.funcionarioRepository = votoFuncionarioRepository;
@@ -44,16 +45,18 @@ public class MelhoriaService {
         return funcionarioRepository.save(votoFuncionario);
     }
 
-    public void atualizaVotos(DadosVoto dadosVoto){
-        if(dadosVoto.getVoto().equals(Voto.APROVAR)){
-           int countVoto = dadosVoto.getQtdVoto();
-           countVoto ++;
-           dadosVoto.setQtdVoto(countVoto);
-        }
-        if(dadosVoto.getVoto().equals(Voto.REJEITAR)){
-            throw new RuntimeException("proposta rejeitada");
+    public void atualizaVotos(DadosVoto dadosVoto) {
+        Melhoria melhoria = repository.findById(dadosVoto.getIdMelhoria())
+                .orElseThrow(() -> new RuntimeException("Proposta de melhoria não encontrada"));
+
+        if (dadosVoto.getVoto().equals(Voto.APROVAR)) {
+             melhoria.setContagemVotos(dadosVoto);
+            repository.save(melhoria);
+        } else if (dadosVoto.getVoto().equals(Voto.REJEITAR)) {
+            throw new RuntimeException("Proposta rejeitada");
         }
     }
+
 
 
 

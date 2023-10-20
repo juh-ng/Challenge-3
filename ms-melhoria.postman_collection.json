@@ -71,6 +71,28 @@
 				"header": []
 			},
 			"response": []
+		},
+		{
+			"name": "Deleta propostas",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8082/ms-melhoria/melhoria/deleta/18",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"ms-melhoria",
+						"melhoria",
+						"deleta",
+						"18"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
