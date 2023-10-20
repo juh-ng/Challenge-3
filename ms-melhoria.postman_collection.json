@@ -1,0 +1,76 @@
+{
+	"info": {
+		"_postman_id": "1ce040d4-d72b-449d-b895-06ef57d90696",
+		"name": "ms-melhoria",
+		"description": "Teste API rest:\n\nCadastro de melhorias\n\nListagem de melhorias\n\nComunicação com ms-user",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19180313"
+	},
+	"item": [
+		{
+			"name": "cadastrar melhoria",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \r\n   \"nomeMelhoria\": \"proposta de melhoria 4\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/melhorias",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"melhorias"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "votacao",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n    {\r\n        \"id\" : 4,\r\n        \"voto\" : \"APROVAR\"\r\n        \r\n    }\r\n    \r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/melhoria/votacao",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"melhoria",
+						"votacao"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "listar propostas de melhoria",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}

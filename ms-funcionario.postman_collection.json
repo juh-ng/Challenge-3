@@ -1,0 +1,56 @@
+{
+	"info": {
+		"_postman_id": "2ab04321-da8e-49cd-ab19-19ad50936a17",
+		"name": "ms-funcionario",
+		"description": "Testes para a API rest ms-user:\n\nVerificação de funcionários para votação.\n\nAbertura de votação.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19180313"
+	},
+	"item": [
+		{
+			"name": "Cadastrar funcionario",
+			"request": {
+				"method": "POST",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Funcionarios cadastrados",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "votacao",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"idMelhoria\" : 9,\r\n        \"voto\" : \"APROVAR\"\r\n        \r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/employees/votar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"employees",
+						"votar"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
