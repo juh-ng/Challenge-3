@@ -37,9 +37,12 @@ public class FuncionarioController {
      }
 
     @PutMapping("/votos")
-    public void cadastrarVoto(@RequestBody DadosVotos votos){
+    public void cadastrarVoto(@RequestBody DadosVotos votos) throws IllegalAccessException {
+        service.evitaVotosRepetidos(votos);
         service.cadastrarVoto(votos);
     }
+
+
 
 
 }

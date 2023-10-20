@@ -31,17 +31,18 @@ public class Melhoria {
     @Column(name = "qt_votos")
     private Integer qtdVoto = 0;
 
-    @Column(name="esta_ativo")
-    private Boolean ativo;
+
 
     public Melhoria(Long id, String tipoMelhoria) {
         this.id = id;
         this.tipoMelhoria = tipoMelhoria;
-        this.ativo = true;
+
     }
 
     public Melhoria(DadosMelhoria dadosCadastro) {
     }
+
+
 
 
 

@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-@FeignClient(value = "ms-melhoria" , url = "http://localhost:8080")
+@FeignClient(value = "ms-melhoria")
 public interface VotoClient {
 
     @RequestMapping(method = RequestMethod.PUT, value = "melhoria/votacao")

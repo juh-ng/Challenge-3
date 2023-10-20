@@ -1,6 +1,7 @@
 package com.nogueira.julia.msuser.domain.entity;
 
 import com.nogueira.julia.msuser.domain.dto.DadosFuncionario;
+import com.nogueira.julia.msuser.domain.dto.DadosVotos;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.validator.constraints.UniqueElements;
@@ -17,13 +18,22 @@ public class Funcionario {
     private Long id;
 
     private String cpf;
-    @Column(name="esta_ativo")
-    private Boolean ativo;
+
+    @Column(name="id_melhoria")
+    private Long idMelhoria;
 
 
 
     public Funcionario(DadosFuncionario dados) {
         this.cpf = dados.cpf();
-        this.ativo = true;
+
     }
+
+    public Funcionario(DadosVotos dadosVotos){
+        this.cpf = dadosVotos.getCpf();
+        this.idMelhoria = dadosVotos.getIdMelhoria();
+
+    }
+
+
 }

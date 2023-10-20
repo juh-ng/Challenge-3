@@ -45,5 +45,17 @@ public class FuncionarioService {
             }
     }
 
+    public Funcionario evitaVotosRepetidos(DadosVotos dados) throws IllegalAccessException {
+        var existingFuncionario = repository.existsByCpf(dados.getCpf());
+        var propostaMelhoria = repository.existsById(dados.getIdMelhoria());
+
+        if(existingFuncionario && propostaMelhoria ){
+            throw new RuntimeException("Funcionario já votou nessa proposta");
+        }
+
+        Funcionario votoFuncionario = new Funcionario(dados);
+        return repository.save(votoFuncionario);
+    }
+
 
 }

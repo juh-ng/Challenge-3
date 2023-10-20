@@ -41,7 +41,7 @@ public class MelhoriaController {
     }
 
 
-    @PutMapping("votacao")
+    @PutMapping("/votacao")
     @Transactional
     public ResponseEntity abrirVotacao(@RequestBody DadosVoto voto) throws IllegalAccessException {
       repository.getReferenceById(voto.getIdMelhoria());
@@ -68,11 +68,13 @@ public class MelhoriaController {
     }
 
     @GetMapping("/propostas")
-    public ResponseEntity<Page<DadosMelhoria>> listarPropostas(@PageableDefault(size = 3, sort = {"id"}) Pageable paginacao) {
-        var page = repository.findAllByAtivoTrue(paginacao).map(DadosMelhoria::new);
+    public ResponseEntity<Page<DadosMelhoria>> listarPropostas(@PageableDefault(sort = {"id"}) Pageable paginacao) {
+        var page = repository.findAll(paginacao).map(DadosMelhoria::new);
         return ResponseEntity.ok(page);
 
     }
+
+
 
 
 
